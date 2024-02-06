@@ -2,43 +2,30 @@ from tkinter import *
 
 #function to select operation or number
 def button_press(num):
-
     global equation_text
-
     equation_text = equation_text + str(num)
-
     equation_label.set(equation_text)
 
 #functions to calculate
 def equals():
-
     global equation_text
 
     try:
-
         total = str(eval(equation_text))
-
         equation_label.set(total)
-
         equation_text = total
 
     except SyntaxError:
-
         equation_label.set("syntax error")
-
         equation_text = ""
 
     except ZeroDivisionError:
-
         equation_label.set("arithmetic error")
-
         equation_text = ""
 
 #function to clear display
 def clear():
-
     global equation_text
-
     equation_label.set("")
 
     equation_text = ""
